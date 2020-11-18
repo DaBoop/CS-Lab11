@@ -154,7 +154,8 @@ namespace Lab11
             public LogType type;
 
             public LogRecord(string arg_desc, LogType arg_type) => (desc, type) = (arg_desc, arg_type);
-            public LogRecord(string arg_desc, string arg_type) => (desc, type) = (arg_desc, (LogType) Enum.Parse(typeof(LogType), arg_type));
+            public LogRecord(string arg_desc, string arg_type) : this(arg_desc, (LogType)Enum.Parse(typeof(LogType), arg_type)) { }
+            // Крайне необычно
         };
 
         public class AttentionLevel
